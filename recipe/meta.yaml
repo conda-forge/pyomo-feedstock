@@ -52,7 +52,7 @@ requirements:
     - six >=1.4
 
 test:
-  imports:
+  imports: # Note that there may be new imports
     - pyomo
     - pyomo.bilevel
     - pyomo.bilevel.plugins
