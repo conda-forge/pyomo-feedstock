@@ -38,7 +38,7 @@ requirements:
   build:
     - python
     - setuptools
-    - pyutilib >=5.3.5
+    - pyutilib >=5.4
     - appdirs
     - ply
     - six >=1.4
@@ -46,7 +46,7 @@ requirements:
   run:
     - python
     - setuptools
-    - pyutilib >=5.3.5
+    - pyutilib >=5.4
     - appdirs
     - ply
     - six >=1.4
