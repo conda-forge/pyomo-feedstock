@@ -81,7 +81,6 @@ test:
     - pyomo.dae
     - pyomo.dae.plugins
     - pyomo.dae.tests
-    - pyomo.data
     - pyomo.environ
     - pyomo.environ.tests
     - pyomo.gdp
