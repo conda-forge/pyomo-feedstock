@@ -4,7 +4,7 @@ package:
   name: pyomo
   version: {{ version }}
 
-source:
+source: # pypi md5
   fn: Pyomo-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/P/Pyomo/Pyomo-{{ version }}.tar.gz
   md5: 3ba602e60c16ae1557c656157b58eb2c
