@@ -33,7 +33,6 @@ conda search pyomo --channel conda-forge
 ```
 
 
-
 About conda-forge
 =================
 
