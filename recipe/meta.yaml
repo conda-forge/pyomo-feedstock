@@ -1,13 +1,13 @@
-{% set version = "4.4.1" %}
+{% set version = "5.0.1" %}
 
 package:
   name: pyomo
   version: {{ version }}
 
-source:
+source: # pypi md5
   fn: Pyomo-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/P/Pyomo/Pyomo-{{ version }}.tar.gz
-  md5: bbd554f64178c619098dc00a09263999
+  md5: 3ba602e60c16ae1557c656157b58eb2c
 
 build:
   number: 0
@@ -38,7 +38,7 @@ requirements:
   build:
     - python
     - setuptools
-    - pyutilib >=5.4
+    - pyutilib >=5.4.1
     - appdirs
     - ply
     - six >=1.4
@@ -46,7 +46,7 @@ requirements:
   run:
     - python
     - setuptools
-    - pyutilib >=5.4
+    - pyutilib >=5.4.1
     - appdirs
     - ply
     - six >=1.4
@@ -81,7 +81,6 @@ test:
     - pyomo.dae
     - pyomo.dae.plugins
     - pyomo.dae.tests
-    - pyomo.data
     - pyomo.environ
     - pyomo.environ.tests
     - pyomo.gdp
