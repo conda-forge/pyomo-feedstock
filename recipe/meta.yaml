@@ -1,4 +1,4 @@
-{% set version = "5.0.1" %}
+{% set version = "5.1" %}
 
 package:
   name: pyomo
@@ -7,7 +7,7 @@ package:
 source: # pypi md5
   fn: Pyomo-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/P/Pyomo/Pyomo-{{ version }}.tar.gz
-  md5: 3ba602e60c16ae1557c656157b58eb2c
+  md5: 5c1e91f75f9a92ef9b4dc17c5b93c075
 
 build:
   number: 0
