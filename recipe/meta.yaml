@@ -91,9 +91,6 @@ test:
     - pyomo.mpec.tests
     - pyomo.neos
     - pyomo.neos.plugins
-    - pyomo.openopt
-    - pyomo.openopt.plugins
-    - pyomo.openopt.tests
     - pyomo.opt
     - pyomo.opt.base
     - pyomo.opt.blackbox
