@@ -33,6 +33,7 @@ build:
     - ossolverservice=pyomo.scripting.commands:OSSolverService
     - pyomo_python=pyomo.scripting.commands:pyomo_python
     - pyomo_old=pyomo.scripting.pyomo_command:main
+    - get_pyomo_extras=scripts.get_pyomo_extras:main
 
 requirements:
   build:
@@ -64,6 +65,8 @@ test:
     - pyomo.checker.plugins.checkers.py3k
     - pyomo.checker.plugins.checkers.sample
     - pyomo.checker.tests
+    - pyomo.contrib
+    - pyomo.contrib.simplemodel
     - pyomo.core
     - pyomo.core.base
     - pyomo.core.beta
@@ -81,6 +84,7 @@ test:
     - pyomo.dae
     - pyomo.dae.plugins
     - pyomo.dae.tests
+    - pyomo.data
     - pyomo.environ
     - pyomo.environ.tests
     - pyomo.gdp
@@ -91,6 +95,7 @@ test:
     - pyomo.mpec.tests
     - pyomo.neos
     - pyomo.neos.plugins
+    - pyomo.neos.tests
     - pyomo.opt
     - pyomo.opt.base
     - pyomo.opt.blackbox
@@ -108,7 +113,10 @@ test:
     - pyomo.pysp.plugins
     - pyomo.pysp.scenariotree
     - pyomo.pysp.smps
+    - pyomo.pysp.solvers
     - pyomo.pysp.tests
+    - pyomo.pysp.tests.benders
+    - pyomo.pysp.tests.evalxhat
     - pyomo.pysp.tests.examples
     - pyomo.pysp.tests.scenariotreemanager
     - pyomo.pysp.tests.smps
@@ -120,8 +128,11 @@ test:
     - pyomo.repn.plugins.ampl
     - pyomo.repn.tests
     - pyomo.repn.tests.ampl
+    - pyomo.repn.tests.cpxlp
+    - pyomo.repn.tests.mps
     - pyomo.scripting
     - pyomo.scripting.plugins
+    - pyomo.scripting.tests
     - pyomo.solvers
     - pyomo.solvers.plugins
     - pyomo.solvers.plugins.converter
@@ -129,10 +140,12 @@ test:
     - pyomo.solvers.plugins.solvers
     - pyomo.solvers.plugins.testdriver
     - pyomo.solvers.tests
-    - pyomo.solvers.tests.io
-    - pyomo.solvers.tests.io.fd
+    - pyomo.solvers.tests.checks
+    - pyomo.solvers.tests.core
+    - pyomo.solvers.tests.core.plugins
     - pyomo.solvers.tests.mip
-    - pyomo.solvers.tests.pickling
+    - pyomo.solvers.tests.models
+    - pyomo.solvers.tests.piecewise_linear
     - pyomo.util
     - pyomo.util.tests
     - pyomo.version
@@ -154,6 +167,7 @@ about:
   home: http://pyomo.org
   license: "BSD 3-Clause"
   summary: 'Pyomo: Python Optimization Modeling Objects'
+  license_family: BSD
 
 extra:
   recipe-maintainers:
