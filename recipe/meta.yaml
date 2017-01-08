@@ -82,7 +82,6 @@ test:
     - pyomo.core.tests.examples
     - pyomo.core.tests.transform
     - pyomo.core.tests.unit
-    - pyomo.dae
     - pyomo.dae.plugins
     - pyomo.dae.tests
     - pyomo.data
