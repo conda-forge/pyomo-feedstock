@@ -68,7 +68,6 @@ test:
     - pyomo.checker.plugins.checkers.sample
     - pyomo.checker.tests
     - pyomo.contrib
-    - pyomo.contrib.simplemodel
     - pyomo.core
     - pyomo.core.base
     - pyomo.core.beta
