@@ -1,6 +1,6 @@
 # Update with the following command
 #   conda skeleton pypi pyomo
-{% set version = "5.2" %}
+{% set version = "5.3" %}
 
 package:
   name: pyomo
@@ -9,7 +9,7 @@ package:
 source: # pypi md5
   fn: Pyomo-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/P/Pyomo/Pyomo-{{ version }}.tar.gz
-  md5: d746c8c437c6e92faba916a83d5f6140
+  md5: cba4f7bfd9add73c0b3e04a780c983f7
 
 build:
   number: 0
@@ -41,7 +41,7 @@ requirements:
   build:
     - python
     - setuptools
-    - pyutilib >=5.5
+    - pyutilib >=5.6
     - appdirs
     - ply
     - six >=1.4
@@ -49,7 +49,7 @@ requirements:
   run:
     - python
     - setuptools
-    - pyutilib >=5.5
+    - pyutilib >=5.6
     - appdirs
     - ply
     - six >=1.4
@@ -72,6 +72,7 @@ test:
     - pyomo.core.base
     - pyomo.core.beta
     - pyomo.core.data
+    - pyomo.core.kernel
     - pyomo.core.plugins
     - pyomo.core.plugins.data
     - pyomo.core.plugins.transform
