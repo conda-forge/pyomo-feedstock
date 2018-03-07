@@ -117,7 +117,6 @@ test:
     - pyomo.pysp.tests.evalxhat
     - pyomo.pysp.tests.examples
     - pyomo.pysp.tests.scenariotreemanager
-    - pyomo.pysp.tests.smps
     - pyomo.pysp.tests.unit
     - pyomo.pysp.util
     - pyomo.repn
@@ -154,7 +153,6 @@ test:
     - evaluate_xhat --help
     - runph --help
     - runef --help
-    - pysp2smps --help
     - phsolverserver --help
     - scenariotreeserver --help
     - computeconf --help
