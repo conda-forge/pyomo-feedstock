@@ -1,6 +1,6 @@
 # Update with the following command
 #   conda skeleton pypi pyomo
-{% set version = "5.3" %}
+{% set version = "5.4.3" %}
 
 package:
   name: pyomo
@@ -9,7 +9,7 @@ package:
 source: # pypi md5
   fn: Pyomo-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/P/Pyomo/Pyomo-{{ version }}.tar.gz
-  md5: cba4f7bfd9add73c0b3e04a780c983f7
+  md5: 31037be9ebf16beea5678a6f1c3df421
 
 build:
   number: 0
@@ -19,7 +19,6 @@ build:
     - evaluate_xhat=pyomo.pysp.evaluate_xhat:EvaluateXhat_main
     - runph=pyomo.pysp.phinit:PH_main
     - runef=pyomo.pysp.ef_writer_script:main
-    - pysp2smps=pyomo.pysp.smps.pysp2smps:main
     - phsolverserver=pyomo.pysp.phsolverserver:main
     - scenariotreeserver=pyomo.pysp.scenariotree.server_pyro:main
     - computeconf=pyomo.pysp.computeconf:main
@@ -112,7 +111,6 @@ test:
     - pyomo.pysp
     - pyomo.pysp.plugins
     - pyomo.pysp.scenariotree
-    - pyomo.pysp.smps
     - pyomo.pysp.solvers
     - pyomo.pysp.tests
     - pyomo.pysp.tests.benders
