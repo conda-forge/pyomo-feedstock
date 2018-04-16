@@ -12,7 +12,7 @@ source: # pypi md5
   md5: b92ec20e8150ef90b24c8e0d12e111b5
 
 build:
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record record.txt
   entry_points:
     - runbenders=pyomo.pysp.benders:Benders_main
