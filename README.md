@@ -14,14 +14,15 @@ Summary: Pyomo: Python Optimization Modeling Objects
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/pyomo-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/pyomo-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/pyomo-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/pyomo-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/pyomo-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/pyomo-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/pyomo-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/pyomo-feedstock)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pyomo/badges/version.svg)](https://anaconda.org/conda-forge/pyomo)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pyomo/badges/downloads.svg)](https://anaconda.org/conda-forge/pyomo)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pyomo-green.svg)](https://anaconda.org/conda-forge/pyomo) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyomo.svg)](https://anaconda.org/conda-forge/pyomo) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyomo.svg)](https://anaconda.org/conda-forge/pyomo) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyomo.svg)](https://anaconda.org/conda-forge/pyomo) |
 
 Installing pyomo
 ================
