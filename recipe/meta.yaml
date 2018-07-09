@@ -12,8 +12,9 @@ source: # pypi md5
   md5: b92ec20e8150ef90b24c8e0d12e111b5
 
 build:
-  number: 1
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  noarch: python
+  number: 2
+  script: python -m pip install --no-deps --ignore-installed .
   entry_points:
     - runbenders=pyomo.pysp.benders:Benders_main
     - evaluate_xhat=pyomo.pysp.evaluate_xhat:EvaluateXhat_main
@@ -37,7 +38,8 @@ build:
     - get_pyomo_extras=scripts.get_pyomo_extras:main
 
 requirements:
-  build:
+  host:
+    - pip
     - python
     - setuptools
     - pyutilib >=5.6.3
