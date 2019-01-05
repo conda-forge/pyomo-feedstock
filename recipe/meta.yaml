@@ -70,7 +70,6 @@ test:
     - pyomo.contrib.gdpopt
     - pyomo.contrib.preprocessing
     - pyomo.contrib.preprocessing.plugins
-    - pyomo.contrib.simplemodel
     - pyomo.contrib.trustregion
     - pyomo.core
     - pyomo.core.base
