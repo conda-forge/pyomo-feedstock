@@ -64,25 +64,39 @@ test:
     - pyomo.checker.plugins.checkers.model
     - pyomo.checker.plugins.checkers.py3k
     - pyomo.checker.plugins.checkers.sample
+    - pyomo.common
     - pyomo.contrib
     - pyomo.contrib.example
     - pyomo.contrib.example.plugins
+    - pyomo.contrib.gdp_bounds
+    - pyomo.contrib.gdp_bounds.plugins
     - pyomo.contrib.gdpopt
+    - pyomo.contrib.mcpp
+    - pyomo.contrib.multistart
+    - pyomo.contrib.parmest
+    - pyomo.contrib.parmest.examples
+    - pyomo.contrib.parmest.examples.mea
+    - pyomo.contrib.parmest.examples.rooney_biegler
+    - pyomo.contrib.parmest.examples.semibatch
     - pyomo.contrib.preprocessing
     - pyomo.contrib.preprocessing.plugins
+    - pyomo.contrib.sensitivity_toolbox
+    - pyomo.contrib.sensitivity_toolbox.examples
     - pyomo.contrib.trustregion
     - pyomo.core
     - pyomo.core.base
     - pyomo.core.beta
-    - pyomo.core.data
+    - pyomo.core.expr
     - pyomo.core.kernel
-    - pyomo.core.kernel.component_piecewise
+    - pyomo.core.kernel.piecewise_library
     - pyomo.core.plugins
-    - pyomo.core.plugins.data
     - pyomo.core.plugins.transform
     - pyomo.core.preprocess
     - pyomo.dae
     - pyomo.dae.plugins
+    - pyomo.dataportal
+    - pyomo.dataportal.plugins
+    - pyomo.duality
     - pyomo.environ
     - pyomo.gdp
     - pyomo.gdp.plugins
@@ -91,6 +105,8 @@ test:
     - pyomo.mpec.plugins
     - pyomo.neos
     - pyomo.neos.plugins
+    - pyomo.network
+    - pyomo.network.plugins
     - pyomo.opt
     - pyomo.opt.base
     - pyomo.opt.blackbox
