@@ -1,6 +1,6 @@
 # Update with the following command
 #   conda skeleton pypi pyomo
-{% set version = "5.5.1" %}
+{% set version = "5.6" %}
 
 package:
   name: pyomo
@@ -9,7 +9,7 @@ package:
 source: # pypi md5
   fn: Pyomo-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/P/Pyomo/Pyomo-{{ version }}.tar.gz
-  md5: 5ed2046183c38c612ab7aa3e392fa744
+  md5: 53ef6ef8f5529a77f7948d8c202fd39e
 
 build:
   number: 1001
@@ -40,7 +40,7 @@ requirements:
   build:
     - python
     - setuptools
-    - pyutilib >=5.6.3
+    - pyutilib >=5.6.4
     - appdirs
     - ply
     - six >=1.4
@@ -48,7 +48,7 @@ requirements:
   run:
     - python
     - setuptools
-    - pyutilib >=5.6.3
+    - pyutilib >=5.6.4
     - appdirs
     - ply
     - six >=1.4
@@ -64,25 +64,39 @@ test:
     - pyomo.checker.plugins.checkers.model
     - pyomo.checker.plugins.checkers.py3k
     - pyomo.checker.plugins.checkers.sample
+    - pyomo.common
     - pyomo.contrib
     - pyomo.contrib.example
     - pyomo.contrib.example.plugins
+    - pyomo.contrib.gdp_bounds
+    - pyomo.contrib.gdp_bounds.plugins
     - pyomo.contrib.gdpopt
+    - pyomo.contrib.mcpp
+    - pyomo.contrib.multistart
+    - pyomo.contrib.parmest
+    - pyomo.contrib.parmest.examples
+    - pyomo.contrib.parmest.examples.mea
+    - pyomo.contrib.parmest.examples.rooney_biegler
+    - pyomo.contrib.parmest.examples.semibatch
     - pyomo.contrib.preprocessing
     - pyomo.contrib.preprocessing.plugins
+    - pyomo.contrib.sensitivity_toolbox
+    - pyomo.contrib.sensitivity_toolbox.examples
     - pyomo.contrib.trustregion
     - pyomo.core
     - pyomo.core.base
     - pyomo.core.beta
-    - pyomo.core.data
+    - pyomo.core.expr
     - pyomo.core.kernel
-    - pyomo.core.kernel.component_piecewise
+    - pyomo.core.kernel.piecewise_library
     - pyomo.core.plugins
-    - pyomo.core.plugins.data
     - pyomo.core.plugins.transform
     - pyomo.core.preprocess
     - pyomo.dae
     - pyomo.dae.plugins
+    - pyomo.dataportal
+    - pyomo.dataportal.plugins
+    - pyomo.duality
     - pyomo.environ
     - pyomo.gdp
     - pyomo.gdp.plugins
@@ -91,6 +105,8 @@ test:
     - pyomo.mpec.plugins
     - pyomo.neos
     - pyomo.neos.plugins
+    - pyomo.network
+    - pyomo.network.plugins
     - pyomo.opt
     - pyomo.opt.base
     - pyomo.opt.blackbox
