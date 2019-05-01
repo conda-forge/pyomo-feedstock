@@ -1,6 +1,6 @@
 # Update with the following command
 #   conda skeleton pypi pyomo
-{% set version = "5.6.1" %}
+{% set version = "5.6.2" %}
 
 package:
   name: pyomo
@@ -9,10 +9,10 @@ package:
 source: # pypi md5
   fn: Pyomo-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/P/Pyomo/Pyomo-{{ version }}.tar.gz
-  sha256: 449be9a4c9b3caee7c89dbe5f0e4e5ad0eaeef8be110a860641cd249986e362c
+  sha256: 4e9ad7170c626849c4100d3e899fcb3788464f89184eef53bf661af70e5a777c
 
 build:
-  number: 3
+  number: 1
   script: python setup.py install --single-version-externally-managed --record record.txt
   entry_points:
     - runbenders=pyomo.pysp.benders:Benders_main
@@ -34,7 +34,6 @@ build:
     - ossolverservice=pyomo.scripting.commands:OSSolverService
     - pyomo_python=pyomo.scripting.commands:pyomo_python
     - pyomo_old=pyomo.scripting.pyomo_command:main
-    - get_pyomo_extras=scripts.get_pyomo_extras:main
 
 requirements:
   build:
@@ -66,23 +65,35 @@ test:
     - pyomo.checker.plugins.checkers.sample
     - pyomo.common
     - pyomo.contrib
+    - pyomo.contrib.derivatives
     - pyomo.contrib.example
     - pyomo.contrib.example.plugins
+    - pyomo.contrib.fbbt
+    - pyomo.contrib.gdpbb
     - pyomo.contrib.gdp_bounds
-    - pyomo.contrib.gdp_bounds.plugins
     - pyomo.contrib.gdpopt
     - pyomo.contrib.mcpp
+    - pyomo.contrib.mindtpy
     - pyomo.contrib.multistart
     - pyomo.contrib.parmest
     - pyomo.contrib.parmest.examples
-    - pyomo.contrib.parmest.examples.mea
+    - pyomo.contrib.parmest.examples.reactor_design
     - pyomo.contrib.parmest.examples.rooney_biegler
     - pyomo.contrib.parmest.examples.semibatch
     - pyomo.contrib.preprocessing
     - pyomo.contrib.preprocessing.plugins
+    - pyomo.contrib.pynumero
+    - pyomo.contrib.pynumero.algorithms
+    - pyomo.contrib.pynumero.examples
+    - pyomo.contrib.pynumero.extensions
+    - pyomo.contrib.pynumero.interfaces
+    - pyomo.contrib.pynumero.linalg
+    - pyomo.contrib.pynumero.sparse
+    - pyomo.contrib.satsolver
     - pyomo.contrib.sensitivity_toolbox
     - pyomo.contrib.sensitivity_toolbox.examples
     - pyomo.contrib.trustregion
+    - pyomo.contrib.viewer
     - pyomo.core
     - pyomo.core.base
     - pyomo.core.beta
