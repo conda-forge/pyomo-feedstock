@@ -12,7 +12,7 @@ source: # pypi md5
   sha256: 4e9ad7170c626849c4100d3e899fcb3788464f89184eef53bf661af70e5a777c
 
 build:
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record record.txt
   entry_points:
     - runbenders=pyomo.pysp.benders:Benders_main
@@ -92,7 +92,6 @@ test:
     - pyomo.contrib.satsolver
     - pyomo.contrib.sensitivity_toolbox
     - pyomo.contrib.sensitivity_toolbox.examples
-    - pyomo.contrib.simplemodel
     - pyomo.contrib.trustregion
     - pyomo.contrib.viewer
     - pyomo.core
