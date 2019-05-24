@@ -1,6 +1,6 @@
 # Update with the following command
 #   conda skeleton pypi pyomo
-{% set version = "5.6.2" %}
+{% set version = "5.6.4" %}
 
 package:
   name: pyomo
@@ -9,10 +9,10 @@ package:
 source: # pypi md5
   fn: Pyomo-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/P/Pyomo/Pyomo-{{ version }}.tar.gz
-  sha256: 4e9ad7170c626849c4100d3e899fcb3788464f89184eef53bf661af70e5a777c
+  sha256: cc24db716f0d2fff5287351bd1cd8c1445bf5a8ef47b4a223cdb5482ab4b74a2
 
 build:
-  number: 1
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
   entry_points:
     - runbenders=pyomo.pysp.benders:Benders_main
@@ -39,7 +39,7 @@ requirements:
   build:
     - python
     - setuptools
-    - pyutilib >=5.6.4
+    - pyutilib >=5.7.0
     - appdirs
     - ply
     - six >=1.4
@@ -47,7 +47,7 @@ requirements:
   run:
     - python
     - setuptools
-    - pyutilib >=5.6.4
+    - pyutilib >=5.7.0
     - appdirs
     - ply
     - six >=1.4
