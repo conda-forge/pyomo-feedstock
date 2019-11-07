@@ -1,6 +1,6 @@
 # Update with the following command
 #   conda skeleton pypi pyomo
-{% set version = "5.6.6" %}
+{% set version = "5.6.7" %}
 
 package:
   name: pyomo
@@ -9,7 +9,7 @@ package:
 source: # pypi md5
   fn: Pyomo-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/P/Pyomo/Pyomo-{{ version }}.tar.gz
-  sha256: 813e14a604b9d3ac63bdd0880c07f5f4e1b8f0a8a10345f1b42bee762219c001
+  sha256: fc97cc9d5a55c5185358ba65c1f9530c9af17e67a9aae7b36c3414f159030ae0
 
 build:
   number: 0
@@ -163,6 +163,7 @@ test:
 about:
   home: http://pyomo.org
   license: "BSD 3-Clause"
+  license_file: LICENSE.txt
   summary: 'Pyomo: Python Optimization Modeling Objects'
   license_family: BSD
 
