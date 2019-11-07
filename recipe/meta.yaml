@@ -12,7 +12,7 @@ source: # pypi md5
   sha256: fc97cc9d5a55c5185358ba65c1f9530c9af17e67a9aae7b36c3414f159030ae0
 
 build:
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record record.txt
   entry_points:
     - runbenders=pyomo.pysp.benders:Benders_main
@@ -66,7 +66,6 @@ test:
     - pyomo.common
     - pyomo.contrib
     - pyomo.contrib.benders
-    - pyomo.contrib.derivatives
     - pyomo.contrib.example
     - pyomo.contrib.example.plugins
     - pyomo.contrib.fbbt
