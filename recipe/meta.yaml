@@ -1,6 +1,6 @@
 # Update with the following command
 #   conda skeleton pypi pyomo
-{% set version = "5.6.7" %}
+{% set version = "5.6.8" %}
 
 package:
   name: pyomo
@@ -9,10 +9,10 @@ package:
 source: # pypi md5
   fn: Pyomo-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/P/Pyomo/Pyomo-{{ version }}.tar.gz
-  sha256: fc97cc9d5a55c5185358ba65c1f9530c9af17e67a9aae7b36c3414f159030ae0
+  sha256: 28cbe034b06a477053616a3ce5ef43149bfd7d025cac490c2a3dd006c388b60d
 
 build:
-  number: 2
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
   entry_points:
     - runbenders=pyomo.pysp.benders:Benders_main
@@ -39,7 +39,7 @@ requirements:
   build:
     - python
     - setuptools
-    - pyutilib >=5.7.2
+    - pyutilib >=5.7.3
     - appdirs
     - ply
     - six >=1.4
@@ -47,7 +47,7 @@ requirements:
   run:
     - python
     - setuptools
-    - pyutilib >=5.7.2
+    - pyutilib >=5.7.3
     - appdirs
     - ply
     - six >=1.4
@@ -165,7 +165,7 @@ test:
 about:
   home: http://pyomo.org
   license: "BSD 3-Clause"
-  license_file: LICENSE.txt
+  license_file: '{{ environ["RECIPE_DIR"] }}/Pyomo-LICENSE.txt'
   summary: 'Pyomo: Python Optimization Modeling Objects'
   license_family: BSD
 
