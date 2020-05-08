@@ -13,7 +13,7 @@ source: # pypi md5
 
 build:
   number: 2
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
     - runbenders=pyomo.pysp.benders:Benders_main
     - evaluate_xhat=pyomo.pysp.evaluate_xhat:EvaluateXhat_main
@@ -36,13 +36,9 @@ build:
     - pyomo_old=pyomo.scripting.pyomo_command:main
 
 requirements:
-  build:
+  host:
     - python
-    - setuptools
-    - pyutilib >=5.8.0
-    - appdirs
-    - ply
-    - six >=1.4
+    - pip
 
   run:
     - python
