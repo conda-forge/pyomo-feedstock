@@ -12,8 +12,8 @@ source: # pypi md5
   sha256: 27e3a3c8411de9bc52e5e6aa88e9a0de0dd7369126bc905996e23057775905d7
 
 build:
-  number: 2
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - runbenders=pyomo.pysp.benders:Benders_main
     - evaluate_xhat=pyomo.pysp.evaluate_xhat:EvaluateXhat_main
@@ -168,8 +168,8 @@ test:
 
 about:
   home: http://pyomo.org
-  license: "BSD-3-Clause"
-  license_file: '{{ environ["RECIPE_DIR"] }}/Pyomo-LICENSE.txt'
+  license: BSD-3-Clause
+  license_file: {{ environ["RECIPE_DIR"] }}/Pyomo-LICENSE.txt
   summary: 'Pyomo: Python Optimization Modeling Objects'
   license_family: BSD
 
