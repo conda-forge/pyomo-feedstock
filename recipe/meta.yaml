@@ -12,7 +12,7 @@ source: # pypi md5
   sha256: 27e3a3c8411de9bc52e5e6aa88e9a0de0dd7369126bc905996e23057775905d7
 
 build:
-  number: 1
+  number: 2
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
     - runbenders=pyomo.pysp.benders:Benders_main
@@ -36,6 +36,10 @@ build:
     - pyomo_old=pyomo.scripting.pyomo_command:main
 
 requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+
   host:
     - python
     - pip
