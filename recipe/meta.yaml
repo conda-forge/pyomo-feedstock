@@ -1,6 +1,6 @@
 # Update with the following command
 #   conda skeleton pypi pyomo
-{% set version = "5.6.9" %}
+{% set version = "5.7" %}
 
 package:
   name: pyomo
@@ -9,7 +9,7 @@ package:
 source: # pypi md5
   fn: Pyomo-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/P/Pyomo/Pyomo-{{ version }}.tar.gz
-  sha256: 17bc3c15b405e3ba3a3b7cf9bf3867f6b8e57b611c8ecfdd43fd802587ee8bc6
+  sha256: 27e3a3c8411de9bc52e5e6aa88e9a0de0dd7369126bc905996e23057775905d7
 
 build:
   number: 2
@@ -36,15 +36,21 @@ build:
     - pyomo_old=pyomo.scripting.pyomo_command:main
 
 requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+
   host:
     - python
     - pip
+    - cython
 
   run:
     - python
     - setuptools
-    - pyutilib >=5.8.0
+    - pyutilib >=6.0.0
     - appdirs
+    - enum34   # [py<34]
     - ply
     - six >=1.4
 
@@ -60,14 +66,18 @@ test:
     - pyomo.checker.plugins.checkers.py3k
     - pyomo.checker.plugins.checkers.sample
     - pyomo.common
+    - pyomo.common.collections
     - pyomo.contrib
     - pyomo.contrib.benders
     - pyomo.contrib.example
     - pyomo.contrib.example.plugins
     - pyomo.contrib.fbbt
+    - pyomo.contrib.fme
     - pyomo.contrib.gdpbb
     - pyomo.contrib.gdp_bounds
     - pyomo.contrib.gdpopt
+    - pyomo.contrib.interior_point
+    - pyomo.contrib.interior_point.linalg
     - pyomo.contrib.mcpp
     - pyomo.contrib.mindtpy
     - pyomo.contrib.multistart
@@ -80,10 +90,8 @@ test:
     - pyomo.contrib.preprocessing.plugins
     - pyomo.contrib.pynumero
     - pyomo.contrib.pynumero.algorithms
-    # pynumero's solvers performs unsafe imports of numpy/scipy
-    #- pyomo.contrib.pynumero.algorithms.solvers
+    - pyomo.contrib.pynumero.algorithms.solvers
     - pyomo.contrib.pynumero.examples
-    - pyomo.contrib.pynumero.extensions
     - pyomo.contrib.pynumero.interfaces
     - pyomo.contrib.pynumero.linalg
     - pyomo.contrib.pynumero.sparse
