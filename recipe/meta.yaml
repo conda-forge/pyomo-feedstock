@@ -1,6 +1,6 @@
 # Update with the following command
 #   conda skeleton pypi pyomo
-{% set version = "5.7" %}
+{% set version = "5.7.1" %}
 
 package:
   name: pyomo
@@ -9,10 +9,10 @@ package:
 source: # pypi md5
   fn: Pyomo-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/P/Pyomo/Pyomo-{{ version }}.tar.gz
-  sha256: 27e3a3c8411de9bc52e5e6aa88e9a0de0dd7369126bc905996e23057775905d7
+  sha256: 1228204d7eb4cdd217fed6323a7434de68e89a2aaa74085ea47f1b42fb64d8cd
 
 build:
-  number: 2
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
     - runbenders=pyomo.pysp.benders:Benders_main
