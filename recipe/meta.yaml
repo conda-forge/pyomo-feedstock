@@ -1,6 +1,6 @@
 # Update with the following command
 #   conda skeleton pypi pyomo
-{% set version = "5.7.1" %}
+{% set version = "5.7.2" %}
 
 package:
   name: pyomo
@@ -9,10 +9,10 @@ package:
 source: # pypi md5
   fn: Pyomo-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/P/Pyomo/Pyomo-{{ version }}.tar.gz
-  sha256: 1228204d7eb4cdd217fed6323a7434de68e89a2aaa74085ea47f1b42fb64d8cd
+  sha256: f10ada18ade84b16225dc519ef1788dd6d5f22cb22d0ea44db64c96d14cb7bb0
 
 build:
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
     - runbenders=pyomo.pysp.benders:Benders_main
@@ -69,6 +69,7 @@ test:
     - pyomo.common.collections
     - pyomo.contrib
     - pyomo.contrib.benders
+    - pyomo.contrib.community_detection
     - pyomo.contrib.example
     - pyomo.contrib.example.plugins
     - pyomo.contrib.fbbt
@@ -151,7 +152,6 @@ test:
     - pyomo.solvers.plugins.converter
     - pyomo.solvers.plugins.smanager
     - pyomo.solvers.plugins.solvers
-    - pyomo.solvers.plugins.testdriver
     - pyomo.util
     - pyomo.version
 
