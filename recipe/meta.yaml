@@ -1,6 +1,6 @@
 # Update with the following command
 #   conda skeleton pypi pyomo
-{% set version = "5.7.3" %}
+{% set version = "6.0" %}
 
 package:
   name: pyomo
@@ -9,31 +9,13 @@ package:
 source: # pypi md5
   fn: Pyomo-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/P/Pyomo/Pyomo-{{ version }}.tar.gz
-  sha256: 2c4697107477a1b9cc9dad534d8f9c2dc6ee397c47ad44113e257732b83cfc8f
+  sha256: 3dbfb1c7a8ef76dfd99d82c211845cdba9bf31a179269b57b6b28ad635ae34f9
 
 build:
   number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
-    - runbenders=pyomo.pysp.benders:Benders_main
-    - evaluate_xhat=pyomo.pysp.evaluate_xhat:EvaluateXhat_main
-    - runph=pyomo.pysp.phinit:PH_main
-    - runef=pyomo.pysp.ef_writer_script:main
-    - phsolverserver=pyomo.pysp.phsolverserver:main
-    - scenariotreeserver=pyomo.pysp.scenariotree.server_pyro:main
-    - computeconf=pyomo.pysp.computeconf:main
-    - results_schema=pyomo.scripting.commands:results_schema
-    - pyro_mip_server=pyomo.scripting.pyro_mip_server:main
-    - test.pyomo=pyomo.scripting.runtests:runPyomoTests
     - pyomo=pyomo.scripting.pyomo_main:main
-    - pyomo_ns=pyomo.scripting.commands:pyomo_ns
-    - pyomo_nsc=pyomo.scripting.commands:pyomo_nsc
-    - kill_pyro_mip_servers=pyomo.scripting.commands:kill_pyro_mip_servers
-    - launch_pyro_mip_servers=pyomo.scripting.commands:launch_pyro_mip_servers
-    - readsol=pyomo.scripting.commands:readsol
-    - ossolverservice=pyomo.scripting.commands:OSSolverService
-    - pyomo_python=pyomo.scripting.commands:pyomo_python
-    - pyomo_old=pyomo.scripting.pyomo_command:main
 
 requirements:
   build:
@@ -48,11 +30,7 @@ requirements:
   run:
     - python
     - setuptools
-    - pyutilib >=6.0.0
-    - appdirs
-    - enum34   # [py<34]
     - ply
-    - six >=1.4
 
 test:
   imports: # Note that there may be new imports
@@ -68,15 +46,22 @@ test:
     - pyomo.common
     - pyomo.common.collections
     - pyomo.contrib
+    - pyomo.contrib.appsi
+    - pyomo.contrib.appsi.cmodel
+    - pyomo.contrib.appsi.examples
+    - pyomo.contrib.appsi.solvers
+    - pyomo.contrib.appsi.utils
+    - pyomo.contrib.appsi.writers
     - pyomo.contrib.benders
     - pyomo.contrib.community_detection
     - pyomo.contrib.example
     - pyomo.contrib.example.plugins
     - pyomo.contrib.fbbt
     - pyomo.contrib.fme
-    - pyomo.contrib.gdpbb
     - pyomo.contrib.gdp_bounds
+    - pyomo.contrib.gdpbb
     - pyomo.contrib.gdpopt
+    - pyomo.contrib.incidence_analysis
     - pyomo.contrib.interior_point
     - pyomo.contrib.interior_point.linalg
     - pyomo.contrib.mcpp
@@ -93,6 +78,10 @@ test:
     - pyomo.contrib.pynumero.algorithms
     - pyomo.contrib.pynumero.algorithms.solvers
     - pyomo.contrib.pynumero.examples
+    - pyomo.contrib.pynumero.examples.callback
+    - pyomo.contrib.pynumero.examples.external_grey_box
+    - pyomo.contrib.pynumero.examples.external_grey_box.param_est
+    - pyomo.contrib.pynumero.examples.external_grey_box.react_example
     - pyomo.contrib.pynumero.interfaces
     - pyomo.contrib.pynumero.linalg
     - pyomo.contrib.pynumero.sparse
@@ -110,7 +99,6 @@ test:
     - pyomo.core.kernel.piecewise_library
     - pyomo.core.plugins
     - pyomo.core.plugins.transform
-    - pyomo.core.preprocess
     - pyomo.dae
     - pyomo.dae.plugins
     - pyomo.dataportal
@@ -128,7 +116,6 @@ test:
     - pyomo.network.plugins
     - pyomo.opt
     - pyomo.opt.base
-    - pyomo.opt.blackbox
     - pyomo.opt.parallel
     - pyomo.opt.plugins
     - pyomo.opt.problem
@@ -136,11 +123,6 @@ test:
     - pyomo.opt.solver
     - pyomo.opt.testing
     - pyomo.pysp
-    - pyomo.pysp.convert
-    - pyomo.pysp.plugins
-    - pyomo.pysp.scenariotree
-    - pyomo.pysp.solvers
-    - pyomo.pysp.util
     - pyomo.repn
     - pyomo.repn.beta
     - pyomo.repn.plugins
@@ -150,20 +132,11 @@ test:
     - pyomo.solvers
     - pyomo.solvers.plugins
     - pyomo.solvers.plugins.converter
-    - pyomo.solvers.plugins.smanager
     - pyomo.solvers.plugins.solvers
     - pyomo.util
     - pyomo.version
 
   commands:
-    - runbenders --help
-    - evaluate_xhat --help
-    - runph --help
-    - runef --help
-    - phsolverserver --help
-    - scenariotreeserver --help
-    - computeconf --help
-    - test.pyomo --help
     - pyomo --help
 
 about:
