@@ -122,7 +122,6 @@ test:
     - pyomo.opt.results
     - pyomo.opt.solver
     - pyomo.opt.testing
-    - pyomo.pysp
     - pyomo.repn
     - pyomo.repn.beta
     - pyomo.repn.plugins
