@@ -1,6 +1,6 @@
 # Update with the following command
 #   conda skeleton pypi pyomo
-{% set version = "6.0.1" %}
+{% set version = "6.1.1" %}
 
 package:
   name: pyomo
@@ -9,7 +9,7 @@ package:
 source: # pypi md5
   fn: Pyomo-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/P/Pyomo/Pyomo-{{ version }}.tar.gz
-  sha256: 4b27bc917b12a6011e7eb3442a54619f0f42f1087d4defa14b903dd985fdbe7c
+  sha256: 32f378fda748ff299b4492b12b04ed1d8b11c857117fa0e5e6b609aa322fcade
 
 build:
   number: 0
@@ -62,6 +62,7 @@ test:
     - pyomo.contrib.gdpbb
     - pyomo.contrib.gdpopt
     - pyomo.contrib.incidence_analysis
+    - pyomo.contrib.incidence_analysis.common
     - pyomo.contrib.interior_point
     - pyomo.contrib.interior_point.linalg
     - pyomo.contrib.mcpp
@@ -85,6 +86,7 @@ test:
     - pyomo.contrib.pynumero.interfaces
     - pyomo.contrib.pynumero.linalg
     - pyomo.contrib.pynumero.sparse
+    - pyomo.contrib.pyros
     - pyomo.contrib.satsolver
     - pyomo.contrib.sensitivity_toolbox
     - pyomo.contrib.sensitivity_toolbox.examples
@@ -149,5 +151,4 @@ extra:
   recipe-maintainers:
     - whart222
     - jsiirola
-    - astrojuanlu
     - blnicho
