@@ -12,7 +12,7 @@ source: # pypi md5
   sha256: f2a58977c3c72e706aef7ab7d016bdf66df85df8ea5b25cc0ba387e2cef880bb
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
     - pyomo=pyomo.scripting.pyomo_main:main
