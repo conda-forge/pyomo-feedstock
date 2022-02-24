@@ -1,6 +1,6 @@
 # Update with the following command
 #   conda skeleton pypi pyomo
-{% set version = "6.1.2" %}
+{% set version = "6.2" %}
 
 package:
   name: pyomo
@@ -9,7 +9,7 @@ package:
 source: # pypi md5
   fn: Pyomo-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/P/Pyomo/Pyomo-{{ version }}.tar.gz
-  sha256: f2a58977c3c72e706aef7ab7d016bdf66df85df8ea5b25cc0ba387e2cef880bb
+  sha256: 89bc69a9a0afe10f5d229abe508b04ebbd3d2e213aa6c8ec2db2562798fa0400
 
 build:
   number: 1
@@ -35,8 +35,6 @@ requirements:
 test:
   imports: # Note that there may be new imports
     - pyomo
-    - pyomo.bilevel
-    - pyomo.bilevel.plugins
     - pyomo.checker
     - pyomo.checker.plugins
     - pyomo.checker.plugins.checkers
@@ -149,6 +147,7 @@ about:
 
 extra:
   recipe-maintainers:
-    - whart222
-    - jsiirola
     - blnicho
+    - jsiirola
+    - mrmundt
+    - whart222

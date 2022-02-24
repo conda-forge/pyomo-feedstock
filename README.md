@@ -235,5 +235,6 @@ Feedstock Maintainers
 
 * [@blnicho](https://github.com/blnicho/)
 * [@jsiirola](https://github.com/jsiirola/)
+* [@mrmundt](https://github.com/mrmundt/)
 * [@whart222](https://github.com/whart222/)
 
