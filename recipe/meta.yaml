@@ -27,12 +27,12 @@ requirements:
     - pip
     - cython
     - pybind11
-    - pytest
 
   run:
     - python
     - setuptools
     - ply
+    - pytest
 
 test:
   imports: # Note that there may be new imports
