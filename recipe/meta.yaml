@@ -32,7 +32,6 @@ requirements:
     - python
     - setuptools
     - ply
-    - pytest
 
 test:
   imports: # Note that there may be new imports
@@ -46,6 +45,7 @@ test:
     - pyomo.common
     - pyomo.common.collections
     - pyomo.contrib
+    - pyomo.contrib.ampl_function_demo
     - pyomo.contrib.appsi
     - pyomo.contrib.appsi.cmodel
     - pyomo.contrib.appsi.examples
@@ -61,6 +61,7 @@ test:
     - pyomo.contrib.gdp_bounds
     - pyomo.contrib.gdpbb
     - pyomo.contrib.gdpopt
+    - pyomo.contrib.gjh
     - pyomo.contrib.incidence_analysis
     - pyomo.contrib.incidence_analysis.common
     - pyomo.contrib.interior_point
@@ -70,6 +71,7 @@ test:
     - pyomo.contrib.multistart
     - pyomo.contrib.parmest
     - pyomo.contrib.parmest.examples
+    - pyomo.contrib.parmest.examples.reaction_kinetics
     - pyomo.contrib.parmest.examples.reactor_design
     - pyomo.contrib.parmest.examples.rooney_biegler
     - pyomo.contrib.parmest.examples.semibatch
@@ -91,6 +93,7 @@ test:
     - pyomo.contrib.sensitivity_toolbox
     - pyomo.contrib.sensitivity_toolbox.examples
     - pyomo.contrib.trustregion
+    - pyomo.contrib.trustregion.examples
     - pyomo.contrib.viewer
     - pyomo.core
     - pyomo.core.base
@@ -123,7 +126,6 @@ test:
     - pyomo.opt.problem
     - pyomo.opt.results
     - pyomo.opt.solver
-    - pyomo.opt.testing
     - pyomo.repn
     - pyomo.repn.beta
     - pyomo.repn.plugins
