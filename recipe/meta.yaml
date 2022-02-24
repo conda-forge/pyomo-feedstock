@@ -26,6 +26,8 @@ requirements:
     - python
     - pip
     - cython
+    - pybind11
+    - pytest
 
   run:
     - python
