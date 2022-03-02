@@ -13,7 +13,7 @@ source: # pypi md5
 
 build:
   number: 1
-  script: "{{ PYTHON }} -m pip install . --install-option="--with-distributable-extensions" --no-deps -vv"
+  script: "{{ PYTHON }} -m pip install . --install-option='--with-distributable-extensions' --no-deps -vv"
   entry_points:
     - pyomo=pyomo.scripting.pyomo_main:main
 
