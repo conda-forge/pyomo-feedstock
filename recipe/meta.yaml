@@ -1,6 +1,6 @@
 # Update with the following command
 #   conda skeleton pypi pyomo
-{% set version = "6.3.0" %}
+{% set version = "6.4.0" %}
 
 package:
   name: pyomo
@@ -9,10 +9,10 @@ package:
 source: # pypi md5
   fn: Pyomo-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/P/Pyomo/Pyomo-{{ version }}.tar.gz
-  sha256: b4df6305438a2b6ec75bd2e1588b919feb97089ed179a944b334432723781f81
+  sha256: b548825301b6bd4073a0620a8265d956153d53c12fca37cc7184fa54fce96222
 
 build:
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . --install-option=--with-distributable-extensions --no-deps -vv"
   entry_points:
     - pyomo=pyomo.scripting.pyomo_main:main
