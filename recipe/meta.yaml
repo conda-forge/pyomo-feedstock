@@ -12,7 +12,7 @@ source: # pypi md5
   sha256: a636a3a1c8314b8be85899cb6fac5d6a9a78fc75c6d58b74d3ec106ae5ed8f59
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --install-option=--with-distributable-extensions --no-deps -vv"
   entry_points:
     - pyomo=pyomo.scripting.pyomo_main:main
@@ -21,6 +21,9 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
 
   host:
     - python
