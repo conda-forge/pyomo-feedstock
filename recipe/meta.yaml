@@ -1,6 +1,6 @@
 # Update with the following command
 #   conda skeleton pypi pyomo
-{% set version = "6.4.1" %}
+{% set version = "6.4.2" %}
 
 package:
   name: pyomo
@@ -9,7 +9,7 @@ package:
 source: # pypi md5
   fn: Pyomo-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/P/Pyomo/Pyomo-{{ version }}.tar.gz
-  sha256: a636a3a1c8314b8be85899cb6fac5d6a9a78fc75c6d58b74d3ec106ae5ed8f59
+  sha256: 6f5a867e77bdd6ac2ba0da5d4a251e38543ae05eba5a0c5cf8ab39e7fa8e1ea9
 
 build:
   number: 0
@@ -63,7 +63,6 @@ test:
     - pyomo.contrib.fbbt
     - pyomo.contrib.fme
     - pyomo.contrib.gdp_bounds
-    - pyomo.contrib.gdpbb
     - pyomo.contrib.gdpopt
     - pyomo.contrib.gjh
     - pyomo.contrib.incidence_analysis
@@ -79,6 +78,7 @@ test:
     - pyomo.contrib.parmest.examples.reactor_design
     - pyomo.contrib.parmest.examples.rooney_biegler
     - pyomo.contrib.parmest.examples.semibatch
+    - pyomo.contrib.parmest.utils
     - pyomo.contrib.preprocessing
     - pyomo.contrib.preprocessing.plugins
     - pyomo.contrib.pynumero
