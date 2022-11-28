@@ -1,6 +1,6 @@
 # Update with the following command
 #   conda skeleton pypi pyomo
-{% set version = "6.4.2" %}
+{% set version = "6.4.3" %}
 
 package:
   name: pyomo
@@ -9,10 +9,10 @@ package:
 source: # pypi md5
   fn: Pyomo-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/P/Pyomo/Pyomo-{{ version }}.tar.gz
-  sha256: 6f5a867e77bdd6ac2ba0da5d4a251e38543ae05eba5a0c5cf8ab39e7fa8e1ea9
+  sha256: 7f3f67f61a6e5c2dd9c4dd930356d3176bad1572f1abee780592e725d6445288
 
 build:
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . --install-option=--with-distributable-extensions --no-deps -vv"
   entry_points:
     - pyomo=pyomo.scripting.pyomo_main:main
@@ -58,6 +58,9 @@ test:
     - pyomo.contrib.appsi.writers
     - pyomo.contrib.benders
     - pyomo.contrib.community_detection
+    - pyomo.contrib.cp
+    - pyomo.contrib.cp.repn
+    - pyomo.contrib.cp.scheduling_expr
     - pyomo.contrib.example
     - pyomo.contrib.example.plugins
     - pyomo.contrib.fbbt
@@ -65,12 +68,19 @@ test:
     - pyomo.contrib.gdp_bounds
     - pyomo.contrib.gdpopt
     - pyomo.contrib.gjh
+    - pyomo.contrib.iis
     - pyomo.contrib.incidence_analysis
     - pyomo.contrib.incidence_analysis.common
     - pyomo.contrib.interior_point
     - pyomo.contrib.interior_point.linalg
     - pyomo.contrib.mcpp
     - pyomo.contrib.mindtpy
+    - pyomo.contrib.mpc
+    - pyomo.contrib.mpc.data
+    - pyomo.contrib.mpc.examples
+    - pyomo.contrib.mpc.examples.cstr
+    - pyomo.contrib.mpc.interfaces
+    - pyomo.contrib.mpc.modeling
     - pyomo.contrib.multistart
     - pyomo.contrib.parmest
     - pyomo.contrib.parmest.examples
