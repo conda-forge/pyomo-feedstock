@@ -13,7 +13,7 @@ source: # pypi md5
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --install-option=--with-distributable-extensions --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --install-option=--with-distributable-extensions --no-deps -vv
   entry_points:
     - pyomo=pyomo.scripting.pyomo_main:main
 
@@ -158,8 +158,8 @@ test:
 
 about:
   home: http://pyomo.org
-  license: "BSD-3-Clause"
-  license_file: '{{ environ["RECIPE_DIR"] }}/Pyomo-LICENSE.txt'
+  license: BSD-3-Clause
+  license_file: {{ environ["RECIPE_DIR"] }}/Pyomo-LICENSE.txt
   summary: 'Pyomo: Python Optimization Modeling Objects'
   license_family: BSD
 
