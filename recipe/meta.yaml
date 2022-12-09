@@ -1,6 +1,6 @@
 # Update with the following command
 #   conda skeleton pypi pyomo
-{% set version = "6.4.3" %}
+{% set version = "6.4.4" %}
 
 package:
   name: pyomo
@@ -9,10 +9,10 @@ package:
 source: # pypi md5
   fn: Pyomo-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/P/Pyomo/Pyomo-{{ version }}.tar.gz
-  sha256: 7f3f67f61a6e5c2dd9c4dd930356d3176bad1572f1abee780592e725d6445288
+  sha256: 922dd8e6e3e421550acf884bd27f74cab2fe6552cdde36715d116b0c8345c367 
 
 build:
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . --install-option=--with-distributable-extensions --no-deps -vv"
   entry_points:
     - pyomo=pyomo.scripting.pyomo_main:main
@@ -61,6 +61,7 @@ test:
     - pyomo.contrib.cp
     - pyomo.contrib.cp.repn
     - pyomo.contrib.cp.scheduling_expr
+    - pyomo.contrib.cp.transform
     - pyomo.contrib.example
     - pyomo.contrib.example.plugins
     - pyomo.contrib.fbbt
