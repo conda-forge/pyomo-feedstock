@@ -9,11 +9,11 @@ package:
 source: # pypi md5
   fn: Pyomo-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/P/Pyomo/Pyomo-{{ version }}.tar.gz
-  sha256: 922dd8e6e3e421550acf884bd27f74cab2fe6552cdde36715d116b0c8345c367 
+  sha256: 922dd8e6e3e421550acf884bd27f74cab2fe6552cdde36715d116b0c8345c367
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --install-option=--with-distributable-extensions --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --install-option=--with-distributable-extensions --no-deps -vv
   entry_points:
     - pyomo=pyomo.scripting.pyomo_main:main
 
@@ -159,8 +159,8 @@ test:
 
 about:
   home: http://pyomo.org
-  license: "BSD-3-Clause"
-  license_file: '{{ environ["RECIPE_DIR"] }}/Pyomo-LICENSE.txt'
+  license: BSD-3-Clause
+  license_file: {{ environ["RECIPE_DIR"] }}/Pyomo-LICENSE.txt
   summary: 'Pyomo: Python Optimization Modeling Objects'
   license_family: BSD
 
