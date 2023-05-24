@@ -1,6 +1,6 @@
 # Update with the following command
 #   conda skeleton pypi pyomo
-{% set version = "6.5.0" %}
+{% set version = "6.6.0" %}
 
 package:
   name: pyomo
@@ -9,13 +9,13 @@ package:
 source: # pypi md5
   fn: Pyomo-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/P/Pyomo/Pyomo-{{ version }}.tar.gz
-  sha256: 5a23e775bba9fdbad22698fa1a841e662482edc979f2dea41cc6c54b1bb4b968
+  sha256: 8766c08041b8d91fbc5166d220c9e723fed6057d18be1178bae3b6583376c65e
 
 build:
   number: 0
   script: "{{ PYTHON }} -m pip install . --install-option=--with-distributable-extensions --no-deps -vv"
   entry_points:
-    - pyomo=pyomo.scripting.pyomo_main:main
+    - pyomo=pyomo.scripting.pyomo_main:main_console_script
 
 requirements:
   build:
@@ -40,12 +40,6 @@ requirements:
 test:
   imports: # Note that there may be new imports
     - pyomo
-    - pyomo.checker
-    - pyomo.checker.plugins
-    - pyomo.checker.plugins.checkers
-    - pyomo.checker.plugins.checkers.model
-    - pyomo.checker.plugins.checkers.py3k
-    - pyomo.checker.plugins.checkers.sample
     - pyomo.common
     - pyomo.common.collections
     - pyomo.contrib
@@ -91,6 +85,8 @@ test:
     - pyomo.contrib.parmest.examples.rooney_biegler
     - pyomo.contrib.parmest.examples.semibatch
     - pyomo.contrib.parmest.utils
+    - pyomo.contrib.piecewise
+    - pyomo.contrib.piecewise.transform
     - pyomo.contrib.preprocessing
     - pyomo.contrib.preprocessing.plugins
     - pyomo.contrib.pynumero
