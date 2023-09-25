@@ -12,7 +12,7 @@ source: # pypi md5
   sha256: c8ad55213ff8b1a2c4e469110db8079722d5a6f364c6c46a42e2f750fc9e4d26
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   script_env:
     - PYOMO_SETUP_ARGS=--with-distributable-extensions
