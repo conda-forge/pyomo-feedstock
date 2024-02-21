@@ -1,6 +1,6 @@
 # Update with the following command
 #   conda skeleton pypi pyomo
-{% set version = "6.7.0" %}
+{% set version = "6.7.1" %}
 
 package:
   name: pyomo
@@ -9,7 +9,7 @@ package:
 source: # pypi md5
   fn: Pyomo-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/P/Pyomo/Pyomo-{{ version }}.tar.gz
-  sha256: a245ec609ef2fd907269f0b8e0923f74d5bf868b2ec0e62bf2a30b3f253bd17b
+  sha256: 735b66c45937f1caa43f073d8218a4918b6de658914a699397d38d5b8c219a40
 
 build:
   number: 0
@@ -107,6 +107,7 @@ test:
     - pyomo.contrib.satsolver
     - pyomo.contrib.sensitivity_toolbox
     - pyomo.contrib.sensitivity_toolbox.examples
+    - pyomo.contrib.solver
     - pyomo.contrib.trustregion
     - pyomo.contrib.trustregion.examples
     - pyomo.contrib.viewer
