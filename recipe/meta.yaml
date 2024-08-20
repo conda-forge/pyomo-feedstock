@@ -16,8 +16,8 @@ build:
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   script_env:
     - PYOMO_SETUP_ARGS=--with-distributable-extensions
-    - JDS_1=yes [print(dir()) or True]
-    - JDS_2=yes [import os; print('\n'.join(str(i) for i in os.environ.items())) or True]
+    - JDS_1=yes  # [ print(dir()) or True ]
+    - JDS_2=yes  # [ exec('''import os; print('\n'.join(str(i) for i in os.environ.items()))''') or True ]
   entry_points:
     - pyomo=pyomo.scripting.pyomo_main:main_console_script
 
