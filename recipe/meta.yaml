@@ -1,6 +1,6 @@
 # Update with the following command
 #   conda skeleton pypi pyomo
-{% set version = "6.7.3" %}
+{% set version = "6.8.0" %}
 
 package:
   name: pyomo
@@ -9,13 +9,13 @@ package:
 source: # pypi md5
   fn: Pyomo-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/P/Pyomo/Pyomo-{{ version }}.tar.gz
-  sha256: b7f0441c405af4f42f38527ae38826a5c0a4984dd7bea1fe07172789d8594770
+  sha256: a204a78d8ed5fa7ad8fa94d3c8ed4f6da38b5c02a68b8fe446bc694f16c8d1ea
 
 build:
-  number: 0
+  number: 2
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   script_env:
-    - PYOMO_SETUP_ARGS=--with-distributable-extensions
+    - PYOMO_SETUP_ARGS=--with-distributable-extensions  # [ 'pypy' not in environ.get('CONFIG') ]
   entry_points:
     - pyomo=pyomo.scripting.pyomo_main:main_console_script
 
@@ -46,6 +46,7 @@ test:
     - pyomo.common
     - pyomo.common.collections
     - pyomo.contrib
+    - pyomo.contrib.alternative_solutions
     - pyomo.contrib.ampl_function_demo
     - pyomo.contrib.appsi
     - pyomo.contrib.appsi.cmodel
