@@ -16,6 +16,10 @@ build:
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   script_env:
     - PYOMO_SETUP_ARGS=--with-distributable-extensions  # [ 'pypy' not in environ['CONFIG'] ]
+     - JDS_1=1  # [ print("TEST1") or print('pypy' not in environ['CONFIG']) or True ]
+     - JDS_2=1  # [ print("TEST2") or print('pypy' not in environ.get('CONFIG')) or True ]
+     - JDS_3=1  # [ print("TEST3") or print(environ.get('CONFIG')) or True ]
+     - JDS_4=1  # [ print("TEST4") or print(environ['CONFIG']) or True ]
   entry_points:
     - pyomo=pyomo.scripting.pyomo_main:main_console_script
 
