@@ -8,11 +8,11 @@ package:
 
 source: # pypi md5
   fn: Pyomo-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/P/Pyomo/Pyomo-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/P/Pyomo/Pyomo-{{ version }}.tar.gz
   sha256: dc3369193a915d6fa9a59382f1c02c17f6bf540584f641b9bd20d1f1a7f8ba8c
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   script_env:
     - PYOMO_SETUP_ARGS=--with-distributable-extensions  # [ 'pypy' not in environ.get('CONFIG', '') ]
