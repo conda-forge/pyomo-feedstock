@@ -1,18 +1,18 @@
 # Update with the following command
 #   conda skeleton pypi pyomo
-{% set version = "6.9.0" %}
+{% set version = "6.9.1" %}
 
 package:
   name: pyomo
   version: {{ version }}
 
 source: # pypi md5
-  fn: Pyomo-{{ version }}.tar.gz
-  url: https://pypi.org/packages/source/P/Pyomo/Pyomo-{{ version }}.tar.gz
-  sha256: 622323c9d24de09db9fb491847a9c371be24efa1cc2f38da4782e11850ec1e7d
+  fn: pyomo-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/P/Pyomo/pyomo-{{ version }}.tar.gz
+  sha256: ccb85fa4b03450c32614a939c6830d073a7ce79461b12b0f1e7809db96ae86de
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   script_env:
     - PYOMO_SETUP_ARGS=--with-distributable-extensions  # [ 'pypy' not in environ.get('CONFIG', '') ]
