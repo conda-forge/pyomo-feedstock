@@ -1,6 +1,6 @@
 # Update with the following command
 #   conda skeleton pypi pyomo
-{% set version = "6.9.2" %}
+{% set version = "6.9.3" %}
 
 package:
   name: pyomo
@@ -9,7 +9,7 @@ package:
 source: # pypi md5
   fn: pyomo-{{ version }}.tar.gz
   url: https://pypi.org/packages/source/P/Pyomo/pyomo-{{ version }}.tar.gz
-  sha256: 81b2b14ea619244824e1c547cc12602fe9a6e19309cbf0742868c5b1ef37cb35
+  sha256: 54ec698bb31f78460e1627cbfa90cb2741b629c1ecaca7035bd2e340351a47f7
 
 build:
   number: 0
@@ -56,6 +56,7 @@ test:
     - pyomo.contrib.appsi.solvers
     - pyomo.contrib.appsi.utils
     - pyomo.contrib.appsi.writers
+    - pyomo.contrib.aslfunctions
     - pyomo.contrib.benders
     - pyomo.contrib.community_detection
     - pyomo.contrib.cp
@@ -115,6 +116,8 @@ test:
     - pyomo.contrib.simplification
     - pyomo.contrib.simplification.ginac
     - pyomo.contrib.solver
+    - pyomo.contrib.solver.common
+    - pyomo.contrib.solver.solvers
     - pyomo.contrib.trustregion
     - pyomo.contrib.trustregion.examples
     - pyomo.contrib.viewer
