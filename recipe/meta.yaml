@@ -1,6 +1,6 @@
 # Update with the following command
 #   conda skeleton pypi pyomo
-{% set version = "6.9.4" %}
+{% set version = "6.9.5" %}
 
 package:
   name: pyomo
@@ -9,10 +9,10 @@ package:
 source: # pypi md5
   fn: pyomo-{{ version }}.tar.gz
   url: https://pypi.org/packages/source/P/Pyomo/pyomo-{{ version }}.tar.gz
-  sha256: 34ad22cd6bf9956de9c0d3842d01c1f92dee0515b25aa3e8f113b326549b1231
+  sha256: 0734020fcd5cc03ee200fd3f79d143fbfc14e6be116e0d16bab79f3f89609879
 
 build:
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   script_env:
     - PYOMO_SETUP_ARGS=--with-distributable-extensions  # [ 'pypy' not in environ.get('CONFIG', '') ]
@@ -118,6 +118,7 @@ test:
     - pyomo.contrib.solver
     - pyomo.contrib.solver.common
     - pyomo.contrib.solver.solvers
+    - pyomo.contrib.solver.solvers.knitro
     - pyomo.contrib.trustregion
     - pyomo.contrib.trustregion.examples
     - pyomo.contrib.viewer
