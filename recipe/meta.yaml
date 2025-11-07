@@ -12,7 +12,7 @@ source: # pypi md5
   sha256: 0734020fcd5cc03ee200fd3f79d143fbfc14e6be116e0d16bab79f3f89609879
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   script_env:
     - PYOMO_SETUP_ARGS=--with-distributable-extensions  # [ 'pypy' not in environ.get('CONFIG', '') ]
