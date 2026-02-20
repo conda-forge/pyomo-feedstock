@@ -1,6 +1,7 @@
 # Update with the following command
 #   conda skeleton pypi pyomo
-{% set version = "6.9.5" %}
+{% set version = "6.10.0" %}
+
 
 package:
   name: pyomo
@@ -9,7 +10,7 @@ package:
 source: # pypi md5
   fn: pyomo-{{ version }}.tar.gz
   url: https://pypi.org/packages/source/P/Pyomo/pyomo-{{ version }}.tar.gz
-  sha256: 0734020fcd5cc03ee200fd3f79d143fbfc14e6be116e0d16bab79f3f89609879
+  sha256: 672fac375e57e121ca935adcc16a1cd118be8afa1a3e5608161fb86220c3a577
 
 build:
   number: 0
@@ -39,12 +40,12 @@ requirements:
   run:
     - python
     - setuptools
-    - ply
 
 test:
   imports: # Note that there may be new imports
     - pyomo
     - pyomo._archive
+    - pyomo.addons
     - pyomo.common
     - pyomo.common.collections
     - pyomo.contrib
@@ -65,8 +66,6 @@ test:
     - pyomo.contrib.cp.transform
     - pyomo.contrib.cspline_external
     - pyomo.contrib.doe
-    - pyomo.contrib.example
-    - pyomo.contrib.example.plugins
     - pyomo.contrib.fbbt
     - pyomo.contrib.fme
     - pyomo.contrib.gdp_bounds
@@ -87,6 +86,7 @@ test:
     - pyomo.contrib.mpc.interfaces
     - pyomo.contrib.mpc.modeling
     - pyomo.contrib.multistart
+    - pyomo.contrib.observer
     - pyomo.contrib.parmest
     - pyomo.contrib.parmest.examples
     - pyomo.contrib.parmest.examples.reaction_kinetics
@@ -118,6 +118,7 @@ test:
     - pyomo.contrib.solver
     - pyomo.contrib.solver.common
     - pyomo.contrib.solver.solvers
+    - pyomo.contrib.solver.solvers.gurobi
     - pyomo.contrib.solver.solvers.knitro
     - pyomo.contrib.trustregion
     - pyomo.contrib.trustregion.examples
@@ -135,6 +136,7 @@ test:
     - pyomo.dae.plugins
     - pyomo.dataportal
     - pyomo.dataportal.plugins
+    - pyomo.devel
     - pyomo.duality
     - pyomo.environ
     - pyomo.gdp
@@ -163,6 +165,9 @@ test:
     - pyomo.solvers.plugins
     - pyomo.solvers.plugins.converter
     - pyomo.solvers.plugins.solvers
+    - pyomo.tpl
+    - pyomo.tpl.ply
+    - pyomo.unsupported
     - pyomo.util
     - pyomo.version
 
