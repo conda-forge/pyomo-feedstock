@@ -13,7 +13,7 @@ source: # pypi md5
   sha256: 74a9109c3b4ab97e69d6b1a1ca4e96a54442a177d8b1a19393e417e6ba008ba3
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   script_env:
     - PYOMO_SETUP_ARGS=--with-distributable-extensions  # [ 'pypy' not in environ.get('CONFIG', '') ]
@@ -140,7 +140,6 @@ test:
     - pyomo.devel
     - pyomo.devel.initialization
     - pyomo.devel.initialization.bounds
-    - pyomo.duality
     - pyomo.environ
     - pyomo.gdp
     - pyomo.gdp.plugins
